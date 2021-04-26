@@ -7,6 +7,25 @@
     <div class="card-body">
         <!-- slot flash message -->
         <div class="row">
+            <div class="col">
+                <?php if (session()->getFlashdata('gagal')): ?>
+                    <?php $errors = session()->getFlashdata('gagal') ?>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <?php foreach ($errors as $error) : ?> 
+                                <li><?= $error ; ?></li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
+                            <?php endif; ?>
+                            <?php if (session()->getFlashdata('sukses')): ?>
+                            <div class="alert alert-success" role="alert">
+                                <p><?= session()->getFlashdata('sukses') ?></p>
+                            </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="row">
             <div class="col mx-auto">
                 <form action="<?= base_url('registrasi/simpan'); ?>" method="post">
                     <?= csrf_field(); ?>

@@ -21,6 +21,17 @@
                 <a href="<?= base_url('info-kegiatan') ?>" class="nav-link">Info Kegiatan</a>                
             </li>
         </ul>
+    
+
+    <!-- tombol login/register -->
+        <ul class="nav ml-auto">
+            <li class="nav-link">
+                <a href="<?= base_url('login') ?>" class="btn btn-outline-primary">Login</a>                
+            </li>
+            <li class="nav-link">
+                <a href="<?= base_url('registrasi') ?>" class="btn btn-outline-success">Registrasi</a>                
+            </li>
+        </ul>
     </nav>
     <!-- Konten/Isi -->
     <?= $this->renderSection("content"); ?>
